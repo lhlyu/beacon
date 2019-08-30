@@ -10,4 +10,5 @@ def read_guide():
 def write_guide(load_dict):
     with open("config/guide.json", "w",encoding="utf-8") as f:
         json.dump(load_dict, f, ensure_ascii=False,indent=2)
+		
 

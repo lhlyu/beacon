@@ -3,7 +3,6 @@
 from flask import Flask,render_template,request
 from util import util
 
-
 app = Flask(__name__)
 
 @app.route('/')
@@ -15,8 +14,6 @@ def index():
 @app.route("/api",methods=["GET"])
 def api():
     return "api"
-
-
 
 if __name__ == '__main__':
     app.run(
