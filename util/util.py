@@ -1,11 +1,15 @@
 # encoding=utf-8
 
 import json
+import os
+
+root = "config/guide1.json"
 
 def read_guide():
-    with open("config/guide.json", 'r',encoding="utf-8") as f:
-        load_dict = json.loads(f.read())
-        print(load_dict)
+    if os.path.exists(root):
+        with open(root, 'r',encoding="utf-8") as f:
+            load_dict = json.loads(f.read())
+            return load_dict
 
 def write_guide(load_dict):
     with open("config/guide.json", "w",encoding="utf-8") as f:

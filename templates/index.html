@@ -2,17 +2,178 @@
 <html lang="zh-cmn-Hans">
 <head>
     <meta charset="UTF-8">
-    <title>主</title>
+    <title>beacon</title>
 </head>
 <style>
+    @font-face {
+        font-family: 'GuDianMingChaoTi';   /*字体名称*/
+        src: url('GuDianMingChaoTi.otf');       /*字体源文件*/
+    }
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    body{
+        background-color: #bdc3c7;
+    }
+    .banner{
+        background-image: url("https://raw.githubusercontent.com/lhlyu/beacon/master/img/beacon.jpg");
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 150px;
+        background-size: cover;
+        z-index: 1;
+    }
+    header{
+        width: 100%;
+        height: 60px;
+        z-index: 2;
+        position: absolute;
+        left: 0px;
+        top: 90px;
+        text-align: center;
+        background-color: rgba(0,0,0,0.65);
+        color: white;
+        letter-spacing: 2px;
+        box-shadow: 0 1px 1px #7f8c8d;
+    }
+    .nav{
+        width: 200px;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 0 auto;
+    }
+    span{
+        flex: 1;
+        width:80px;
+        cursor: pointer;
+        line-height: 60px;
+        margin: 0 10px;
+        font-family: GuDianMingChaoTi;
+        display: block;
+        transition-duration: .2s;
+        transition-timing-function: ease-in-out;
+        transition-delay: 0s;
+        position: relative;
+        font-size: 1.5rem;
+    }
+    span:before {
+        content: "";
+        position: absolute;
+        height: 1px;
+        width: 50px;
+        bottom: 13px;
+        left: 16px;
+        background-color: #ffffff;
+        visibility: hidden;
+        transform: scaleX(0);
+        transition-duration: .4s;
+        transition-timing-function: ease-in-out;
+        transition-delay: 0s;
+    }
+    span:hover:before {
+        visibility: visible;
+        transform: scaleX(1)
+    }
+    span:active:before {
+        visibility: visible;
+        transform: scaleX(1);
+        background-color: #f1c40f;
+    }
+    span:active,span.active{
+        color: #f1c40f;
+    }
+    .container{
+        position: absolute;
+        left: 0;
+        top: 150px;
+        width: 100%;
 
+    }
+    .fields{
+        padding: 20px 30px;
+    }
+    fieldset{
+        border-width: 1px;
+        border-style: dashed;
+        border-color: white;
+        border-image: none;
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+    legend {
+        font-family: GuDianMingChaoTi;
+        font-size: 1.2rem;
+        letter-spacing: 5px;
+    }
+    .items{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .item{
+        flex: 1;
+        background-color: white;
+        border-radius: 10px;
+        height: 80px;
+        max-width: 200px;
+        display: flex;
+        flex-direction: row;
+    }
+    .left{
+        height: 80px;
+        width: 80px;
+        background-size: cover;
+        border-radius: 10px 0 0 10px;
+    }
+    .right{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    .right-top{
+        flex: 1;
+        text-align: center;
+        line-height: 45px;
+    }
+    .right-bottom{
+        flex: 1;
+        text-align: center;
+        line-height: 35px;
+    }
 </style>
 <body>
-    <div class="container yu-padding">
-        <div class="row yu-center">
-            {% for block in blocks %}
-                {% include block %}
-            {% endfor %}
+    <div class="banner"></div>
+    <header>
+        <div class="nav">
+            <span class="active">导航</span>
+            <span>脚本</span>
+        </div>
+    </header>
+    <div class="container">
+        <div class="fields">
+            <fieldset>
+                <legend>内网</legend>
+                <div class="items">
+                    <div class="item">
+                        <div class="left" style="background-image: url('https://github.githubassets.com/images/icons/emoji/octocat.png')">
+                        </div>
+                        <div class="right">
+                            <div class="right-top"><a href="https://www.baidu.com">Github</a></div>
+                            <div class="right-bottom">访问</div>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>外网</legend>
+                this is outnet
+            </fieldset>
         </div>
     </div>
 </body>
