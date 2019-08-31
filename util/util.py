@@ -21,6 +21,7 @@ def read_guide():
             load_dict = json.loads(f.read())
             update_guide(load_dict)
             return load_dict
+    return None
 
 def write_guide(filePath,load_dict):
     with open(filePath, "w",encoding="utf-8") as f:

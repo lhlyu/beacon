@@ -17,14 +17,25 @@ def api():
     print(json.loads(str(request.data,"utf-8")))
     data = json.loads(str(request.data,"utf-8"))
     datas = util.read_guide()
-    for d in datas:
-        if d["fieldName"] == data["fieldName"]:
-            d["items"].append({
-                "name":data["name"],
-                "url":data["url"],
-                "logo":data["logo"]
-            })
-            break
+    if datas is not None:
+        for d in datas:
+            if d["fieldName"] == data["fieldName"]:
+                d["items"].append({
+                    "name":data["name"],
+                    "url":data["url"],
+                    "logo":data["logo"]
+                })
+                break
+    else:
+        datas = [{
+                    "fieldName": data["fieldName"],
+                    "items": [{
+                            "name": data["name"],
+                            "url": data["url"],
+                            "logo": data["logo"]
+                        }]
+                }]
+
     util.write_guide(util.root,datas)
     util.update_guide(None)
     return "OK"

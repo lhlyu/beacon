@@ -258,6 +258,7 @@
             headers: { 'Content-Type': 'application/json;charset=utf-8'}
         }).then(response =>{
                 console.log(response.json())
+                location.reload()
         })
     }
     function trim(str){

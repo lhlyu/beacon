@@ -41,6 +41,16 @@
         "name": "调色板",
         "url": "https://flatuicolors.com",
         "logo": ""
+      },
+      {
+        "name": "youtube",
+        "url": "https://www.youtube.com/",
+        "logo": ""
+      },
+      {
+        "name": "IRIR-DOC",
+        "url": "http://lhlyu.gitee.io/iris-doc/",
+        "logo": "http://lhlyu.gitee.io/iris-doc/favicon.ico"
       }
     ]
   }
