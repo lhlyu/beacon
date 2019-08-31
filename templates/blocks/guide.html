@@ -1,10 +1,273 @@
-<!DOCTYPE html>
-<html lang="zh-cmn-Hans">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<style>
+        .container{
+        position: absolute;
+        left: 0;
+        top: 150px;
+        width: 100%;
 
-</body>
-</html>
+    }
+    .fields{
+        padding: 20px 30px;
+    }
+    fieldset{
+        border-width: 1px;
+        border-style: dashed;
+        border-color: white;
+        border-image: none;
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+    legend {
+        font-family: GuDianMingChaoTi;
+        font-size: 1.2rem;
+        letter-spacing: 5px;
+    }
+    .items{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .item{
+        flex: 1;
+        background-color: white;
+        border-radius: 10px;
+        /*height: 80px;*/
+        min-width: 200px;
+        cursor: pointer;
+        box-shadow: 0 2px 3px rgba(0,0,0,.16), 0 2px 3px rgba(0,0,0,.24);
+        transition: all .3s ease 0s,transform .6s cubic-bezier(.6,.2,.1,1) 0s,-webkit-transform .6s cubic-bezier(.6,.2,.1,1) 0s;
+        margin: 5px;
+    }
+    .item:hover{
+        background: rgba(236, 240, 241,0.5);
+        box-shadow: 0 10px 20px rgba(0,0,0,.2), 0 6px 6px rgba(0,0,0,.24);
+        transform: translateY(-3px);
+    }
+    .left{
+        height: 52px;
+        width: 52px;
+        border-radius: 10px 0 0 10px;
+        padding: 15px;
+    }
+    img{
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        border: 2px solid #ffffff;
+        object-fit: cover;
+    }
+    .right{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        color: #2c3e50;
+    }
+    .right-top{
+        flex: 1;
+        line-height: 55px;
+        width: 130px;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+    }
+    a{
+        text-decoration:none;
+        font-size: 1.1rem;
+        display: flex;
+        flex-direction: row;
+    }
+    .right-bottom{
+        flex: 1;
+        line-height: 30px;
+        width: 130px;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+    }
+    .select-input input{
+        height: 20px;
+        width: 150px;
+        font-size: 1rem;
+        z-index: 11;
+        position: relative;
+        border: none;
+        outline: none;
+    }
+    .select-input select{
+        height: 25px;
+        width: 182px;
+        font-size: 1rem;
+        position: absolute;
+        left: 5px;
+        top: 7px;
+        z-index: 10;
+        outline: none;
+        border-radius: 5px;
+        border: none;
+    }
+    .select-input select option{
+        font-size: 1rem;
+    }
+    .modal{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: 999;
+    }
+    .modal-shadow{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-color: rgba(45, 52, 54,0.85);
+        z-index: 1000;
+    }
+    .modal-main{
+        position: fixed;
+        left: 45%;
+        top: 10%;
+        margin: 0 auto;
+        background-color: rgba(255, 255, 255,0.75);
+        width: 190px;
+        margin-top: 20vh;
+        border-radius: 10px;
+        padding: 20px;
+        z-index: 1001;
+    }
+    .item-ele{
+        display: block;
+        position: relative;
+        padding: 10px;
+    }
+    .item-ele-input{
+        height: 24px;
+        width: 176px;
+        margin-left: -4px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        background-color: white;
+        padding-left:5px;
+    }
+    .item-ele-input[type="button"]:active{
+        background-color: #ced6e0;
+    }
+    .hide{
+        display: none;
+    }
+    #add-item{
+        margin-left: 30px;
+        margin-top: 20px;
+        width: 50px;
+        height: 25px;
+        border: none;
+        background-color: white;
+        font-size: 1.2rem;
+        box-shadow: 0 2px 3px rgba(0,0,0,.16), 0 2px 3px rgba(0,0,0,.24);
+        outline: none;
+        transition: all .3s ease 0s,transform .6s cubic-bezier(.6,.2,.1,1) 0s,-webkit-transform .6s cubic-bezier(.6,.2,.1,1) 0s;
+    }
+    #add-item:active{
+        background: rgba(236, 240, 241,0.5);
+        box-shadow: 0 10px 20px rgba(0,0,0,.2), 0 6px 6px rgba(0,0,0,.24);
+        transform: translateY(-3px);
+    }
+</style>
+<div class="container">
+
+    <input type="button" value="+" id="add-item" onclick="show()">
+
+    <div class="fields">
+        {% if datas %}
+        {% for data in datas %}
+        <fieldset>
+            <legend>{{ data["fieldName"] }}</legend>
+            <div class="items">
+                {% for item in data["items"] %}
+                <div class="item">
+                    <a href='{{ item["url"] }}' target="_blank">
+                        <div class="left">
+                            <img src='{{ item["logo"] }}'  onerror="this.src='https://raw.githubusercontent.com/lhlyu/beacon/master/static/img/default.gif';this.onerror = null;">
+                        </div>
+                        <div class="right">
+                            <div class="right-top">{{ item["name"] }}</div>
+                            <div class="right-bottom">访问</div>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </fieldset>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+<div class="modal hide"  >
+    <div class="modal-shadow" onclick="hide()"></div>
+    <div class="modal-main">
+        <div class="select-input item-ele">
+            <input id="field-name" placeholder="块名">
+            <select onchange="select(this.value)">
+                <option value=''>自定义</option>
+                {% if datas %}
+                {% for data in datas %}
+                <option value='{{ data["fieldName"] }}'>{{ data["fieldName"] }}</option>
+                {% endfor %}
+                {% endif %}
+            </select>
+        </div>
+        <div class="item-ele"><input id="item-name" class="item-ele-input" placeholder="名字"></div>
+        <div class="item-ele"><input id="item-url" class="item-ele-input" type="url" placeholder="地址"></div>
+        <div class="item-ele"><input id="item-logo" class="item-ele-input" type="url" placeholder="Logo"></div>
+        <div class="item-ele"><input id="item-btn" class="item-ele-input" type="button" style="width: 182px;" value="提交" onclick="add()"></div>
+    </div>
+</div>
+<script>
+    function select(value) {
+        document.getElementById("field-name").value = value
+    }
+    function add(){
+        let fieldName = trim(document.getElementById("field-name").value)
+        let name = trim(document.getElementById("item-name").value)
+        let url = trim(document.getElementById("item-url").value)
+        let logo = trim(document.getElementById("item-logo").value)
+        if(fieldName === ""){
+            alert("块名不能为空")
+            return
+        }
+        if(name === ""){
+            alert("名字不能为空")
+            return
+        }
+        if(url === ""){
+            alert("地址不能为空")
+            return
+        }
+        var datas = {
+            fieldName:fieldName,
+            name:name,
+            url:url,
+            logo:logo
+        }
+        fetch('/add',{
+            method: 'POST',
+            body: JSON.stringify(datas),
+            headers: { 'Content-Type': 'application/json;charset=utf-8'}
+        }).then(response =>{
+                console.log(response.json())
+        })
+    }
+    function trim(str){
+        return str.replace(/(^\s*)|(\s*$)/g,"")
+    }
+    function show() {
+        document.querySelector(".modal").classList.remove("hide")
+    }
+    function hide(){
+        console.log(1)
+        document.querySelector(".modal").classList.add("hide")
+    }
+</script>

@@ -22,29 +22,24 @@
         "url": "https://gitee.com",
         "logo": "https://gitee.com/logo-black.svg"
       },
-	  {
+      {
         "name": "github",
         "url": "https://github.com",
         "logo": "https://github.githubassets.com/images/icons/emoji/octocat.png"
       },
-	  {
+      {
         "name": "google",
         "url": "https://www.google.com/",
         "logo": "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
       },
-	  {
+      {
         "name": "在线JSON",
         "url": "http://www.bejson.com/jsonviewernew/",
         "logo": ""
       },
-	  {
+      {
         "name": "调色板",
         "url": "https://flatuicolors.com",
-        "logo": ""
-      },
-	  {
-        "name": "youtube",
-        "url": "https://www.youtube.com/",
         "logo": ""
       }
     ]
