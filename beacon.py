@@ -18,6 +18,7 @@ def api():
     data = json.loads(str(request.data,"utf-8"))
     datas = util.read_guide()
     if datas is not None:
+        exitst = False
         for d in datas:
             if d["fieldName"] == data["fieldName"]:
                 d["items"].append({
@@ -25,7 +26,17 @@ def api():
                     "url":data["url"],
                     "logo":data["logo"]
                 })
+                exitst = True
                 break
+        if not exitst:
+            datas.append({
+                    "fieldName": data["fieldName"],
+                    "items": [{
+                            "name": data["name"],
+                            "url": data["url"],
+                            "logo": data["logo"]
+                        }]
+                })
     else:
         datas = [{
                     "fieldName": data["fieldName"],
