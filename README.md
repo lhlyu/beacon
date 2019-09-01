@@ -5,7 +5,9 @@
 
 - 预览
 
-![](./static/img/preview1.jpg)
+![导航](./static/img/preview1.jpg)
+
+![脚本](./static/img/preview2.jpg)
 
 ### 安装
 

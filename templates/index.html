@@ -94,10 +94,16 @@
     <div class="banner"></div>
     <header>
         <div class="nav">
-            <span class="active">导航</span>
-            <span>脚本</span>
+            {% if page == "blocks/guide.html" %}
+            <a href="/"><span class="active">导航</span></a>
+            <a href="/script"><span>脚本</span></a>
+            {% else %}
+            <a href="/"><span>导航</span></a>
+            <a href="/script"><span  class="active">脚本</span></a>
+            {% endif %}
+
         </div>
     </header>
-    {% include 'blocks/guide.html' %}
+    {% include page %}
 </body>
 </html>

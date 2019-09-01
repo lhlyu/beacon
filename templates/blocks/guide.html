@@ -1,5 +1,5 @@
 <style>
-        .container{
+    .container{
         position: absolute;
         left: 0;
         top: 150px;
@@ -127,7 +127,7 @@
     }
     .modal-main{
         position: fixed;
-        left: 45%;
+        left: calc(100vw/2 - 85px);
         top: 10%;
         margin: 0 auto;
         background-color: rgba(255, 255, 255,0.75);
@@ -268,7 +268,6 @@
         document.querySelector(".modal").classList.remove("hide")
     }
     function hide(){
-        console.log(1)
         document.querySelector(".modal").classList.add("hide")
     }
 </script>
