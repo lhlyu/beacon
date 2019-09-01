@@ -16,6 +16,8 @@ script_dir = "scripts"
 
 def read_guide():
     global GUIDE
+    if not os.path.exists("config"):
+        os.mkdir("config")
     if GUIDE is not None:
         return GUIDE
     if os.path.exists(root):
