@@ -9,28 +9,28 @@
       }
     ]
   },
-  {
+{
     "fieldName": "外网",
     "items": [
       {
+        "name": "google",
+        "url": "https://www.google.com/",
+        "logo": "https://camo.githubusercontent.com/ce783627cac13ab026860e2010ab4070171760e5/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f7376672f676f6f676c652e737667"
+      },
+      {
         "name": "百度",
         "url": "https://www.baidu.com",
-        "logo": "https://www.baidu.com/img/bd_logo1.png"
+        "logo": "https://camo.githubusercontent.com/609782ebd7c978a1a7be1a33bd052aaee06dd371/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f7376672f62616964752e737667"
       },
       {
         "name": "gitee",
         "url": "https://gitee.com",
-        "logo": "https://gitee.com/logo-black.svg"
+        "logo": "https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=974732339,3998780254&fm=58&s=0AD7894E9F2887705CF9F5870300B081&bpow=121&bpoh=75"
       },
       {
         "name": "github",
         "url": "https://github.com",
-        "logo": "https://github.githubassets.com/images/icons/emoji/octocat.png"
-      },
-      {
-        "name": "google",
-        "url": "https://www.google.com/",
-        "logo": "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+        "logo": "https://camo.githubusercontent.com/d0518022b7a02d405ad5112a0c8aa455cbfe952e/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f7376672f6769746875622e737667"
       },
       {
         "name": "在线JSON",
@@ -45,12 +45,42 @@
       {
         "name": "youtube",
         "url": "https://www.youtube.com/",
-        "logo": ""
+        "logo": "https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=adaea94b37c79f3d8fe1e336829aaa2c/6a63f6246b600c33e3d7327c164c510fd8f9a1dc.jpg"
       },
       {
         "name": "IRIR-DOC",
         "url": "http://lhlyu.gitee.io/iris-doc/",
         "logo": "http://lhlyu.gitee.io/iris-doc/favicon.ico"
+      },
+      {
+        "name": "开发工具",
+        "url": "http://www.bejson.com/",
+        "logo": ""
+      },
+      {
+        "name": "谷歌翻译",
+        "url": "https://translate.google.cn/#view=home&op=translate&sl=zh-CN&tl=en",
+        "logo": "https://www.gstatic.cn/translate/ic_translate_googblue600_20dp.svg"
+      },
+      {
+        "name": "json2struct",
+        "url": "https://lhlyu.github.io/json-to-go/",
+        "logo": ""
+      },
+      {
+        "name": "stackoverflow",
+        "url": "https://stackoverflow.com/",
+        "logo": "https://cdn.sstatic.net/Img/home/accelerate.svg"
+      },
+      {
+        "name": "菜鸟教程",
+        "url": "https://www.runoob.com/",
+        "logo": "https://www.runoob.com/wp-content/themes/runoob/assets/img/runoob-logo.png"
+      },
+      {
+        "name": "百度翻译",
+        "url": "https://fanyi.baidu.com/?aldtype=16047#auto/zh",
+        "logo": "https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=3757916566,3108098082&fm=58&bpow=512&bpoh=512"
       }
     ]
   }
