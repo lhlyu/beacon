@@ -15,7 +15,8 @@
       "description": "办公自动化系统",
       "url": "#",
       "color": "bg-green-600",
-      "icon": "mdi:office-building"
+      "icon": "mdi:office-building",
+      "badge": "dev"
     },
     {
       "title": "项目管理",
@@ -36,7 +37,8 @@
       "description": "Figma / 蓝湖",
       "url": "#",
       "color": "bg-pink-600",
-      "icon": "mdi:palette"
+      "icon": "mdi:palette",
+      "badge": "dev"
     },
     {
       "title": "共享文档",
