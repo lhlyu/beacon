@@ -7,6 +7,6 @@
 - 克隆项目到本地
 - 修改 [config.json](src/config.json) 文件
 
-> `icon`请使用 [icones](https://icones.js.org/)
+> `icon`请使用 [icones](https://icones.js.org/)，`color`请使用 [colors](https://tailwindcss.com/docs/colors)
 
 - 然后打包发布就行了

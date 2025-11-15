@@ -8,7 +8,7 @@
         <!-- 角标 (右下角) -->
         <span
             v-if="site.badge"
-            class="absolute bottom-0 right-0 px-3 py-1 text-white text-xs font-bold rounded-tl-xl"
+            class="absolute bottom-0 right-0 px-3 py-1 text-white text-xs font-bold rounded-br-xl rounded-tl-xl"
             :class="site.color"
         >
             {{ site.badge.toUpperCase() }}
