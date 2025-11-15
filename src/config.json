@@ -1,0 +1,63 @@
+{
+  "title": "内部导航",
+  "description": "快速访问您的常用工具和资源",
+  "copyright": "© 2025 您的公司名称.保留所有权利.",
+  "sites": [
+    {
+      "title": "公司官网",
+      "description": "官方对外门户",
+      "url": "#",
+      "color": "bg-blue-600",
+      "icon": "mdi:web"
+    },
+    {
+      "title": "内部OA",
+      "description": "办公自动化系统",
+      "url": "#",
+      "color": "bg-green-600",
+      "icon": "mdi:office-building"
+    },
+    {
+      "title": "项目管理",
+      "description": "Jira / Trello",
+      "url": "#",
+      "color": "bg-yellow-500",
+      "icon": "mdi:clipboard-check-multiple"
+    },
+    {
+      "title": "代码仓库",
+      "description": "GitLab / GitHub",
+      "url": "#",
+      "color": "bg-purple-600",
+      "icon": "mdi:git"
+    },
+    {
+      "title": "设计资源",
+      "description": "Figma / 蓝湖",
+      "url": "#",
+      "color": "bg-pink-600",
+      "icon": "mdi:palette"
+    },
+    {
+      "title": "共享文档",
+      "description": "Confluence / Wiki",
+      "url": "#",
+      "color": "bg-indigo-600",
+      "icon": "mdi:file-document-multiple"
+    },
+    {
+      "title": "人事系统",
+      "description": "假期与薪酬",
+      "url": "#",
+      "color": "bg-red-600",
+      "icon": "mdi:account-heart"
+    },
+    {
+      "title": "IT 支持",
+      "description": "帮助与服务台",
+      "url": "#",
+      "color": "bg-gray-500",
+      "icon": "mdi:headset"
+    }
+  ]
+}
